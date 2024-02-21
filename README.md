@@ -11,10 +11,10 @@ Your team will develop the code for the *Nuggets* game, according to the [Requir
 * All teams shall implement the game server.
 * Teams of 4 students shall also implement the game client.
 * We provide a starter kit via GitHub Classroom.
-* Your team shall follow the [Git Flow](https://www.cs.dartmouth.edu/~cs50/Lectures/units/git-flow.html) style of git management.
-* Your team shall use the [Scrum](scrum.md) style of project management.
+* Your team shall follow the [Git Flow]({{unit}}/git-flow) style of git management.
+* Your team may use the [Scrum]({{unit}}/scrum) style of project management.
 * Good design, good style, good documentation, and good testing are expected.
-* Consider the [characteristics of a successful team](https://www.cs.dartmouth.edu/~cs50/Activities/teamwork/index.md).
+* Consider the [characteristics of a successful team]({{activities}}/activity15/index.md).
 
 :arrow_forward:
 You may find this [demo video](https://dartmouth.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=dbece9b4-30f1-49ab-8669-ad220160f0f0) to be helpful.
@@ -23,12 +23,12 @@ You may find this [demo video](https://dartmouth.hosted.panopto.com/Panopto/Page
 
 When you accept the assigment using the GitHub Classroom (using the link in Canvas), you will be asked to join an existing team or to create a new team.
 Please coordinate with your teammates to ensure that your team is registered just once.
-One member should **immediately** configure your repo to [protect the main branch](https://www.cs.dartmouth.edu/~cs50/Lectures/units/protect-main.html).
+One member should **immediately** configure your repo to [protect the main branch]({{uni{{unit}}t}}/protect-main).
 All members of the team should then clone the team's new repository, which includes the starter kit.
 
 ## Submissions
 
-*Deadlines are provided on the [course website](https://www.cs.dartmouth.edu/~cs50/schedule.html).*
+*Deadlines are provided on the [course website]({{logistics}}/syllabus.md#schedule).*
 
 ### Design spec
 
@@ -42,14 +42,14 @@ Your design document (written in Markdown) shall describe the major design decis
 * High-level pseudo code (plain English-like language) for logic/algorithmic flow;
 * Testing plan, including unit tests, integration tests, system tests.
 
-Recall the lecture unit about Design; it has a section about [design specs](https://www.cs.dartmouth.edu/~cs50/Lectures/units/design.html#design-spec).
+Recall the lecture unit about Design; it has a section about [design specs]({{unit}}/design.html#design-spec).
 As examples, see the design specs provided as part of the TSE.
 **Do *not* repeat elements of the [Requirements Spec](REQUIREMENTS.md)**; just refer to it as needed.
 
 **How to submit:**
 Commit a file `DESIGN.md` and any associated files.
 Your spec may include diagrams; be sure to commit them.
-Before the deadline, [push a branch called 'submit-design'](https://www.cs.dartmouth.edu/~cs50/Labs/submit.html).
+Before the deadline, [push a branch called 'submit-design']({{labs}}/submit).
 *Make sure your Markdown renders properly on GitHub!*
 
 ### Design review
@@ -69,7 +69,7 @@ Be prepared to answer questions and receive feedback.
 You must submit an Implementation spec (written in Markdown): a summary of your approach to implementing the server (and client, for teams of 4) and any modules, providing the prototype and brief description of each function, and specifics of the data structure(s) you plan to use.
 You do not need to describe the `support` library or, if you use it, `libcs50`.
 
-Recall the lecture unit about Design; it has a section about [Implementation specs](https://www.cs.dartmouth.edu/~cs50/Lectures/units/design.html#implementation-spec).
+Recall the lecture unit about Design; it has a section about [Implementation specs]({{unit}}/design.html#implementation-spec).
 Of those details, your implementation spec should describe all of your implementation's units (other than those we provide), provide pseudo code for each unit's functions (including prototypes and their parameters), describe every major data structure, and briefly describe a testing plan.
 When describing data structures, we recommend pasting in a C-language `struct` declaration, with comments describing each member.
 When describing the testing plan, consider unit testing of each module, integration testing = client alone or server alone), system testing = client + server together.
@@ -78,7 +78,7 @@ When describing the testing plan, consider unit testing of each module, integrat
 **How to submit:**
 Commit a file `IMPLEMENTATION.md` and any associated files.
 Your spec may include diagrams; be sure to commit them.
-Before the deadline, [push a branch called 'submit-implementation'](https://www.cs.dartmouth.edu/~cs50/Labs/submit.html).
+Before the deadline, [push a branch called 'submit-implementation']({{labs}}/submit.html).
 *Make sure your Markdown renders properly on GitHub!*
 
 ### Final submission
@@ -90,7 +90,7 @@ Plan to submit everything several hours before the deadline.
 
 **How to submit:**
 Commit all necessary files.
-Before the deadline, [push a branch called 'submit-final'](https://www.cs.dartmouth.edu/~cs50/Labs/submit.html).
+Before the deadline, [push a branch called 'submit-final']({{labs}}/submit.html).
 
 We will grade the version of the code in the branch `submit-final` at the time of the deadline; if no such branch appears until later you will ***lose 10 points per hour after the deadline***.
 Specifically, we take 10 points per hour, prorated by the minute, which means that you lose (10/60 x minutesPastDeadline) points off your total project grade.
@@ -158,7 +158,7 @@ Your final project will be graded out of 100 as follows:
 
 ***See the [grading rubric](rubric.md).***
 
-Furthermore, immediately after the project you will each complete a confidential online survey in which you comment on your contribution to the project, and the contributions from members of your group; the Professor uses the information in that survey to set part of your overall course grade (recall the [grading policy](https://www.cs.dartmouth.edu/%7Ecs50/Logistics/#grades)).
+Furthermore, immediately after the project you will each complete a confidential online survey in which you comment on your contribution to the project, and the contributions from members of your group; the Professor uses the information in that survey to set part of your overall course grade (recall the [grading policy]({{logistics}}/#grades)).
 
 ---
 
@@ -277,7 +277,7 @@ It's worth writing the comments and defensive code *as you write the functional 
 
 ### Break down big functions
 
-Review the [unit](https://www.cs.dartmouth.edu/~cs50/Lectures/units/cohesion.html) about *cohesion* and *coupling*, and think about the content and role of each function you write.
+Review the [unit]({{unit}}/cohesion.html) about *cohesion* and *coupling*, and think about the content and role of each function you write.
 If a function starts to get large, break it down into smaller functions.
 I found this to be particularly important for my `handleMessage` functions, because there are multiple message types and every message needs to be handled in a different way.
 Thus, my `handleMessage()` became a really short `if... then... else if... else if... else` structure, wherein each "then" and "else" block was a single statement: calling a `handleXYZ()` function that was specifically focused on handling only that `XYZ` type of message.
@@ -320,8 +320,8 @@ Consider the same approach for any unit you develop.
 As noted in under the [grading](#grading) heading, a substantial portion of your project grade rests on style.
 Some things to consider:
 
-* Follow [CS50 style guidelines](https://www.cs.dartmouth.edu/~cs50/Labs/CodingStyle.html), including naming conventions.
-* Use a consistent naming scheme: choose function and variable names that follow a consistent pattern, recalling the naming tips from a [recent unit](https://www.cs.dartmouth.edu/~cs50/Lectures/units/cohesion.html#routines).
+* Follow [CS50 style guidelines]({{labs}}/CodingStyle.html), including naming conventions.
+* Use a consistent naming scheme: choose function and variable names that follow a consistent pattern, recalling the naming tips from a [recent unit]({{unit}}/cohesion.html#routines).
 * Use consistent terminology across all specs and code comments: the Requirements Spec gives precise definitions for certain terms (like *gridpoint*, *player*, *purse*, *visible*, and more); use those terms rather than making up new terms, and use those terms consistent with their definitions.
 * Use a consistent coordinate system: the Requirement Spec refers to *rows* and *columns* of the grid and of the display; your two specs, and your implementation, should follow that lead. If you choose to refer to (x,y) instead of (col,row), do it consistently... do not mix the two notations, which leads to confusion.
 * Avoid sprinkling char literals throughout code: define some global named constants, e.g., `static const char roomSpot = '.';`  your code will be much more readable and maintainable!
@@ -329,7 +329,7 @@ Some things to consider:
 
 ### Global variables
 
-In the [unit](https://www.cs.dartmouth.edu/~cs50/Lectures/units/cohesion.html) about *cohesion* and *coupling*, we noted that global *variables* are a bad form of coupling.
+In the [unit]({{unit}}/cohesion.html) about *cohesion* and *coupling*, we noted that global *variables* are a bad form of coupling.
 Global *constants* are a good thing, and fairly common.
 Declare them as `static const ...` to ensure they cannot be changed, and ensure they are local to this particular file.
 
@@ -364,7 +364,9 @@ It enables applications to send and receive network messages and also handle key
 
 ### nCurses
 
-The client shall use the *ncurses* library to arrange its interactive display; see the [unit about ncurses](https://www.cs.dartmouth.edu/~cs50/Lectures/units/ncurses).
+The client shall use the *ncurses* library to arrange its interactive display;
+<!-- see the [unit about ncurses](https://www.cs.dartmouth.edu/~cs50/Lectures/units/ncurses). -->
+see the [unit about ncurses]({{unit}}/ncurses).
 Note:
 
 * ncurses has ["still reachable" memory leaks](https://invisible-island.net/ncurses/ncurses.faq.html#config_leaks); ignore them.
@@ -396,7 +398,7 @@ For example, the format string `GRID %d %d` matches successfully only when the s
 
 ### Random numbers
 
-See the [unit](https://www.cs.dartmouth.edu/~cs50/Lectures/units/random) about random numbers.
+See the [unit]({{unit}}/random) about random numbers.
 
 ### libcs50
 
@@ -426,7 +428,7 @@ I found it useful to write little inline functions to convert from a player numb
 
 ### The switch statement
 
-See the [unit](https://www.cs.dartmouth.edu/~cs50/Lectures/units/c-flow.html#switch) about the `switch` statement, which is particularly useful when you have a long list of cases that can be described by a simple comparison.
+See the [unit]({{unit}}/c-flow.html#switch) about the `switch` statement, which is particularly useful when you have a long list of cases that can be described by a simple comparison.
 For example,
 
 ```c
@@ -497,7 +499,7 @@ These reports come from the excellent [cloc](https://github.com/AlDanial/cloc) t
 
 ### Testing and tools
 
-You may run your `client` or `server` on any Linux server in the [Thayer collection](https://www.cs.dartmouth.edu/~cs50/Logistics/systems.html#linux), simply by giving the server's hostname on the client's commandline.
+You may run your `client` or `server` on any Linux server in the [Thayer collection]({{logistics}}/systems.html#linux), simply by giving the server's hostname on the client's commandline.
 Run a server on `babylon5` and a client on `plank`, and you're playing over the real network!
 
 We installed four programs in the shared directory `~/cs50-dev/shared/nuggets/`:
